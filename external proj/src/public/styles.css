@@ -1,0 +1,79 @@
+/* minor tweaks on top of Bootstrap */
+.list-group-item h6 { word-break: break-word; }
+.list-group-item small { display: block; }
+
+/* landing polish */
+.hero-portrait {
+	width: 100%; height: 420px; border-radius: 16px;
+	background: linear-gradient(180deg, rgba(255,255,255,.1), rgba(255,255,255,.02)), url('https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?q=80&w=1974&auto=format&fit=crop') center/cover no-repeat;
+	box-shadow: 0 20px 50px rgba(0,0,0,.25);
+}
+.hero { position: relative; }
+.hero .hero-video { position: absolute; inset: 0; z-index: 0; overflow: hidden; }
+.hero .hero-video video { width: 100%; height: 100%; object-fit: cover; filter: brightness(.55) saturate(1.1); }
+.hero .hero-video::after { content: ""; position: absolute; inset: 0; background: radial-gradient(60% 60% at 20% 10%, rgba(0,0,0,.2), transparent 60%), rgba(0,0,0,.25); }
+.hero .wave, .hero .container { position: relative; z-index: 1; }
+
+/* section video backgrounds */
+.bw-section.dark { position: relative; }
+.section-video { position: absolute; inset: 0; z-index: 0; overflow: hidden; }
+.section-video video { width: 100%; height: 100%; object-fit: cover; filter: brightness(.7) saturate(1.1); }
+.section-video::after { content: ""; position: absolute; inset:0; background: rgba(0,0,0,.2); }
+.hero-input .form-control {
+    background: #ffffff;
+    border-color: #ffffff;
+    color: #111;
+    border-top-left-radius: 10px; border-bottom-left-radius: 10px;
+    box-shadow: 0 6px 20px rgba(0,0,0,.15);
+}
+.hero-input .form-control::placeholder { color: rgba(0,0,0,.55); }
+.hero-input .btn { border-top-right-radius: 10px; border-bottom-right-radius: 10px; border-left: none; }
+
+/* navbar hover animations */
+.navbar .nav-link {
+	position: relative;
+	transition: color .2s ease, transform .2s ease, opacity .2s ease;
+}
+.navbar .nav-link::after {
+	content: "";
+	position: absolute; left: 0; right: 0; bottom: 0;
+	margin: 0 auto; height: 2px; width: 0;
+	background: currentColor; opacity: .85;
+	transition: width .22s ease;
+}
+.navbar .nav-link:hover { transform: translateY(-1px); }
+.navbar .nav-link:hover::after { width: 100%; }
+
+.navbar .btn.btn-primary {
+	transition: transform .2s ease, box-shadow .2s ease, background-color .2s ease;
+	box-shadow: 0 6px 18px rgba(37, 99, 235, .25);
+}
+.navbar .btn.btn-primary:hover {
+	transform: translateY(-2px);
+	box-shadow: 0 10px 24px rgba(37, 99, 235, .35);
+}
+
+/* CTA styling similar to reference */
+.btn-cta {
+	background: #7c3aed; /* purple */
+	border-color: #7c3aed;
+	color: #fff;
+	transition: transform .2s ease, box-shadow .2s ease, background-color .2s ease;
+	box-shadow: 0 10px 24px rgba(124, 58, 237, .35);
+}
+.btn-cta:hover { background:#6d28d9; color:#fff; transform: translateY(-2px); }
+
+/* (portal animated background removed on request) */
+
+/* portal video background */
+.video-bg { position: fixed; inset: 0; z-index: 1; overflow: hidden; pointer-events: none; background:#000; }
+.video-bg video { width: 100%; height: 100%; object-fit: cover; filter: saturate(.95) contrast(1.02); opacity: 1; }
+.video-bg::after { content: ""; position: absolute; inset: 0; background: rgba(0,0,0,.35); }
+
+/* ensure portal content sits above the video */
+.navbar, .container { position: relative; z-index: 2; }
+
+/* portal image background */
+.image-bg { position: fixed; inset: 0; z-index: 1; background: #000 center/cover no-repeat; }
+.image-bg::after { content: ""; position: absolute; inset: 0; background: rgba(0,0,0,0); }
+

@@ -1,0 +1,35 @@
+{
+  "name": "podcast-publishing-portal",
+  "version": "1.0.0",
+  "description": "Podcast Publishing Portal using Node.js, Express, and MongoDB GridFS for audio uploads and streaming",
+  "main": "src/server.js",
+  "type": "module",
+  "scripts": {
+    "dev": "nodemon src/server.js",
+    "start": "node src/server.js"
+  },
+  "keywords": [
+    "podcast",
+    "gridfs",
+    "mongodb",
+    "express",
+    "uploads",
+    "audio"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "busboy": "^1.6.0",
+    "mime-types": "^2.1.35",
+    "mongodb": "^6.9.0",
+    "morgan": "^1.10.0",
+    "multer": "^1.4.5-lts.1",
+    "nanoid": "^5.0.7"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.7"
+  }
+}
+

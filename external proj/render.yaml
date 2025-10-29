@@ -1,0 +1,19 @@
+services:
+  - type: web
+    name: podcast-publishing-portal
+    env: node
+    plan: free
+    buildCommand: npm install
+    startCommand: npm start
+    healthCheckPath: /health
+    envVars:
+      - key: NODE_VERSION
+        value: 18
+      - key: PORT
+        value: 4000
+      # Set this to your MongoDB connection string in the Render dashboard
+      - key: MONGODB_URI
+        sync: false
+      - key: MONGODB_DB
+        value: podcast_portal
+
